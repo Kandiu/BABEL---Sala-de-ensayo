@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BABEL Salas de Ensayo</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #000;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            
+            
+        }
+
+        header, section, footer {
+            padding: 20px;
+            text-align: center;
+            color: white;
+        }
+
+        header {
+            background-color: rgb(0, 0, 0);
+        }
+        header {background-image: url('https://images.unsplash.com/photo-1675291616418-485a8e1ea7bc?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+                background-size: cover;
+                background-position: center;
+                
+            }
+
+        h1 {
+            font-family: 'Pacifico', Gotham;
+            font-size: 100px;
+        }
+        h2 {
+            font-family: "Roboto";
+            font-size: x-large;
+        }    
+        /* Sección con imagen de fondo para el título */
+        #titulo {
+            position: relative;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        
+        #titulo h2 {
+            position: relative;
+            z-index: 1;
+            color: #e00a0a; /* Mantener el color del texto */
+        }
+
+        /* Sección con imagen de fondo para la reserva */
+        #reserva {
+            position: relative;
+            background-image: url('https://images.unsplash.com/photo-1509566393488-f7eb8dfc1a1f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            padding: 50px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #reserva::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+            filter: blur(5px); /* Aplicar desenfoque solo a la imagen de fondo */
+            backdrop-filter: blur(5px);
+        }
+
+        #reserva h2,
+        #reserva p,
+        #reserva ul {
+            position: relative;
+            z-index: 1;
+            color: #fff; /* Mantener el color del texto */
+            list-style-type: none;
+        }
+
+        #reserva a {
+            color: #fff;
+            text-decoration: none;
+            background-color: #c00;
+            padding: 10px 20px;
+            border-radius: 5px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        /* Estilo para la lista de equipamiento de la sala */
+        #salas ul {
+            list-style-type: none; /* Quitar los puntos al principio de cada elemento de la lista */
+            padding: 0; /* Quitar el espacio interior predeterminado de la lista */
+        }
+
+        /* Estilo para cada elemento de la lista de equipamiento de la sala */
+        #salas li {
+            margin-bottom: 10px; /* Agregar un margen inferior entre los elementos de la lista */
+        }
+        /* Estilo para los títulos de las salas */
+/* Estilo para el contenedor de las salas (contenedor de dos columnas) */
+.salas-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Estilo para cada sala */
+.sala {
+    flex: 1; /* Ocupa el espacio disponible en el contenedor */
+    padding: 10px;
+    margin: 50px;
+    background-color: #272727; /* Cambia el color del fondo según tus preferencias */
+    border-radius: 50px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Agrega una sombra suave */
+}
+
+/* Estilo para los títulos de las salas */
+.sala-titulo {
+    font-size: 50px;
+    color: #ff0000c0; /* Cambia el color según tus preferencias */
+}
+
+/* Estilo para la información de la sala */
+.sala-info {
+    font-size: 18px;
+    color: #ffffff; /* Cambia el color según tus preferencias */
+}
+
+/* Estilo para la lista de equipamiento de la sala */
+.equipamiento {
+    list-style-type: none; /* Quitar los puntos al principio de cada elemento de la lista */
+    padding: 0; /* Quitar el espacio interior predeterminado de la lista */
+}
+
+.equipamiento li {
+    margin-bottom: 30px; /* Agregar un margen inferior entre los elementos de la lista */
+    font-size: 16px;
+    color: #cccccc; /* Cambia el color según tus preferencias */
+}
+/* Estilo para la sección de reserva */
+.reserva-section {
+    position: relative;
+    background-image: url('https://images.unsplash.com/photo-1509566393488-f7eb8dfc1a1f?q=80&w=2071&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    text-align: left;
+}
+
+/* Estilo para el contenido de la sección de reserva */
+.reserva-content {
+    position: relative;
+    z-index: 1;
+    color: #fff; /* Mantener el color del texto */
+}
+
+/* Estilo para el botón de reserva */
+.reserva-button {
+    position: center;
+    bottom: 15px;
+    right: 20px;
+    padding: 20px 20px;
+    background-color: #c00; /* Cambia el color del fondo del botón según tus preferencias */
+    color: #fff; /* Cambia el color del texto del botón según tus preferencias */
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer; /* Agrega un cursor al botón para indicar que es interactivo */
+    z-index: 9999;
+}
+
+
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>BABEL</h1>
+        <h1>Salas de ensayo</h1>
+        <p>¡Donde tu música cobra vida!</p>
+    </header>
+
+    <section id="titulo">
+        <h2>Descubre un espacio único para dar vida a tu música. Salas equipadas y un ambiente pensado para potenciar tu creatividad.</h2>
+    </section>
+
+    <div class="salas-container">
+        <section id="sala1" class="sala">
+            <h2 class="sala-titulo">SALA 1</h2>
+            <p class="sala-info">Dimensiones: 4m x 4.5m</p>
+            <ul class="equipamiento">
+                <!-- Lista de equipamiento de la sala 1 -->
+                <li>Amplificador de Guitarra: Fender Frontman</li>
+                <li>Amplificador de Guitarra: Laney Ironheart</li>
+                <li>Amplificador de Bajo: Hartke</li>
+                <li>Batería: Pearl EXR (sin platos)</li>
+                <li>Consola para voces e instrumentos de línea</li>
+            </ul>
+        </section>
+    
+        <section id="sala2" class="sala">
+            <h2 class="sala-titulo">SALA 2</h2>
+            <p class="sala-info">Dimensiones: 4m x 3.5m</p>
+            <ul class="equipamiento">
+                <!-- Lista de equipamiento de la sala 2 -->
+                <li>Amplificador de Guitarra: Fender Frontman</li>
+                <li>Amplificador de Guitarra: Joyo Batamp Zombie</li>
+                <li>Amplificador de Bajo: GK</li>
+                <li>Batería: Mapex Voyager (sin platos)</li>
+                <li>Consola para voces e instrumentos de línea</li>
+            </ul>
+        </section>
+    </div>
+    
+    
+
+    <section id="reserva" class="reserva-section">
+        <div class="reserva-content">
+            <h2>Reserva tu Turno</h2>
+            <p>Envía un mensaje de WhatsApp con la siguiente información:</p>
+            <ul>
+                <li>Nombre de la banda y del reservante</li>
+                <li>Cantidad de personas (incluyendo invitados)</li>
+                <li>Sala deseada (1 o 2)</li>
+                <li>Día y horario</li>
+                <li>Duración (2 o 3 horas)</li>
+            </ul>
+        </div>
+        <!-- Enlace de WhatsApp para abrir el chat -->
+    </section>
+    <section>
+        <a href="https://wa.me/3518018006" class="reserva-button" target="_blank" id="reservaButton">Reservar Ahora</a>
+    </section>
+    <footer>
+        <p>&copy; 2023 BABEL Salas de Ensayo</p>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var reservaButton = document.getElementById('reservaButton');
+    
+            reservaButton.addEventListener('mouseover', function () {
+                // Cambiar el color cuando el cursor pasa sobre el botón
+                reservaButton.style.backgroundColor = '#272727';
+            });
+    
+            reservaButton.addEventListener('mouseout', function () {
+                // Restaurar el color original cuando el cursor sale del botón
+                reservaButton.style.backgroundColor = '#c00'; 
+            });
+        });
+    </script>
+    
+</body>
+</html>
